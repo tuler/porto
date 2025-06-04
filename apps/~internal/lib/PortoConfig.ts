@@ -9,6 +9,7 @@ const mock = import.meta.env.MODE === 'test'
 
 const defaultChain = {
   anvil: Chains.anvil,
+  cartesi: Chains.cartesi,
   dev: import.meta.env.VITE_DEV_CHAIN_ID
     ? Chains.define({
         ...Chains.portoDev,
@@ -29,6 +30,13 @@ const defaultChain = {
 const config = {
   anvil: {
     chains: [defaultChain.anvil],
+    mode: Mode.rpcServer({
+      mock,
+      persistPreCalls: false,
+    }),
+  },
+  cartesi: {
+    chains: [Chains.cartesi],
     mode: Mode.rpcServer({
       mock,
       persistPreCalls: false,
@@ -73,6 +81,9 @@ const dialogHosts = {
   anvil: import.meta.env.PROD
     ? undefined
     : 'https://anvil.localhost:5174/dialog/',
+  cartesi: import.meta.env.PROD
+    ? undefined
+    : 'https://localhost:6751/porto/dialog/',
   dev: import.meta.env.PROD
     ? 'https://dev.id.porto.sh/dialog/'
     : 'https://dev.localhost:5174/dialog/',
