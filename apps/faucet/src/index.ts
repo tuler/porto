@@ -12,6 +12,8 @@ const account = privateKeyToAccount(DRIP_PRIVATE_KEY)
 if (!account?.address) throw new Error('Invalid DRIP_PRIVATE_KEY')
 
 const chains = {
+  [Chains.anvil.id]: Chains.anvil,
+  [Chains.cartesi.id]: Chains.cartesi,
   [Chains.baseSepolia.id]: Chains.baseSepolia,
   [Chains.portoDev.id]: Chains.portoDev,
 } as const

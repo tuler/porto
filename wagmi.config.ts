@@ -1,24 +1,33 @@
-import * as fs from 'node:fs'
 import { defineConfig } from '@wagmi/cli'
 import { foundry } from '@wagmi/cli/plugins'
-import { anvil, base, baseSepolia, portoDev } from './src/core/Chains.js'
+import * as fs from 'node:fs'
+import {
+  anvil,
+  base,
+  baseSepolia,
+  cartesi,
+  portoDev,
+} from './src/core/Chains.js'
 import * as anvilAddresses from './test/src/_generated/addresses.js'
 
 const address = {
   exp1: {
     [anvil.id]: anvilAddresses.exp1Address,
+    [cartesi.id]: '0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35',
     [base.id]: '0x074C9c3273F31651a9dae896C1A1d68E868b6998',
     [baseSepolia.id]: '0x29f45fc3ed1d0ffafb5e2af9cc6c3ab1555cd5a2',
     [portoDev.id]: '0x29f45fc3ed1d0ffafb5e2af9cc6c3ab1555cd5a2',
   },
   exp2: {
     [anvil.id]: anvilAddresses.exp2Address,
+    [cartesi.id]: '0xA15BB66138824a1c7167f5E85b957d04Dd34E468',
     [base.id]: '0xFcc74F42621D03Fd234d5f40931D8B82923E4D29',
     [baseSepolia.id]: '0x62a9d6de963a5590f6fba5119e937f167677bfe7',
     [portoDev.id]: '0x502ff46e72c47b8c3183db8919700377eed66d2e',
   },
   expNft: {
     [anvil.id]: anvilAddresses.expNftAddress,
+    [cartesi.id]: '0xb19b36b1456E65E3A6D514D3F715f204BD59f431',
     [base.id]: '0xB37377508CbEd17a2B3694Fa0A68dc7CEE63DaF9',
     [baseSepolia.id]: '0xFcc74F42621D03Fd234d5f40931D8B82923E4D29',
     [portoDev.id]: '0xEF86CEc1CEf0C78E5725fA6Cc3E9929788bBde35',
