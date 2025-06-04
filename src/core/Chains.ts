@@ -28,6 +28,22 @@ export const anvil = /*#__PURE__*/ define({
   },
 })
 
+export const cartesi = /*#__PURE__*/ define({
+  ...chains.cannon,
+  contracts: {
+    ...chains.cannon.contracts,
+    portoAccount: {
+      address: '0x305BcAAA8F89B51456673192535137bFC36F35D1',
+    },
+  },
+  name: 'Cartesi Devnet',
+  rpcUrls: {
+    default: {
+      http: ['http://127.0.0.1:6751/porto/rpc'],
+    },
+  },
+})
+
 export const base = /*#__PURE__*/ define({
   ...chains.base,
   contracts: {

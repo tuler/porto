@@ -11,6 +11,7 @@ import LucideX from '~icons/lucide/x'
 const env = (
   {
     anvil: 'anvil',
+    cartesi: 'cartesi',
     dev: 'development',
     prod: undefined,
     stg: 'staging',
